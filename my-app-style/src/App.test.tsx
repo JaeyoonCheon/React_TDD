@@ -8,13 +8,11 @@ describe("<App />", () => {
     const linkElement = screen.getByText(/learn react/i);
     expect(linkElement).toBeInTheDocument();
 
+    const appLogo = screen.getByAltText("logo");
     // eslint-disable-next-line testing-library/no-container, testing-library/no-node-access
-    expect(container.getElementsByClassName("App-logo")).toHaveLength(1);
+    expect(appLogo).toBeInTheDocument();
     // eslint-disable-next-line testing-library/no-container, testing-library/no-node-access
-    expect(container.getElementsByClassName("App-logo")[0]).toHaveAttribute(
-      "src",
-      "logo.svg"
-    );
+    expect(appLogo).toHaveAttribute("src", "logo.svg");
     // eslint-disable-next-line testing-library/no-container, testing-library/no-node-access
     expect(container.getElementsByTagName("p")).toHaveLength(1);
     // eslint-disable-next-line testing-library/no-container, testing-library/no-node-access
