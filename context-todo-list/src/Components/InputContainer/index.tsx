@@ -1,15 +1,8 @@
 import React, { useState, useContext } from "react";
 import styled from "styled-components";
 
-import { Button } from "./Button";
-import { Input } from "./Input";
-import { ToDoListContext } from "../Contexts";
-
-interface Props {
-  readonly toDo?: string;
-  readonly onChange?: (text: string) => void;
-  readonly onAdd?: () => void;
-}
+import { Button, Input } from "Components";
+import { ToDoListContext } from "Contexts";
 
 const Container = styled.div`
   display: flex;

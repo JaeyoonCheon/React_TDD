@@ -3,17 +3,17 @@
 exports[`<App /> renders component correctly 1`] = `
 <div>
   <div
-    class="sc-jSMfEi hvHavx"
+    class="sc-iBkjds gsKwUG"
   >
     <div
-      class="sc-gKXOVf VeqKr"
+      class="sc-ftvSup cIJBvK"
     >
       <div
-        class="sc-ftvSup ljjSUY"
+        class="sc-gKXOVf eJVsLV"
         data-testid="toDoList"
       />
       <div
-        class="sc-iBkjds crHxek"
+        class="sc-jSMfEi ydOJn"
       >
         <input
           class="sc-dkzDqf kpbFyQ"
