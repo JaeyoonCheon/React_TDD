@@ -47,4 +47,19 @@ describe("<InputContainer />", () => {
 
     expect(localStorage.getItem("ToDoList")).toBe('["study react 1"]');
   });
+  it("calls the onAdd function when the user clicks Add button", () => {
+    const HandleClick = jest.fn();
+    render(<InputContainer onAdd={HandleClick}></InputContainer>);
+
+    const input = screen.getByPlaceholderText("할 일을 입력해 주세요");
+    const button = screen.getByText("추가");
+    expect(HandleClick).toHaveBeenCalledTimes(0);
+
+    fireEvent.click(button);
+    expect(HandleClick).toHaveBeenCalledTimes(0);
+
+    fireEvent.change(input, { target: { value: "study react 1" } });
+    fireEvent.click(button);
+    expect(HandleClick).toHaveBeenCalledTimes(1);
+  });
 });

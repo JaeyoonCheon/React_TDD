@@ -1,8 +1,10 @@
 import React from "react";
 import styled from "styled-components";
+import { Switch, Route } from "react-router-dom";
 
-import { InputContainer, ToDoList } from "Components";
+import { PageHeader } from "Components";
 import { ToDoListProvider } from "Contexts";
+import { List, Add, Detail, NotFound } from "Pages";
 
 const Container = styled.div`
   min-height: 100vh;
@@ -11,23 +13,26 @@ const Container = styled.div`
   justify-content: center;
   flex-direction: column;
 `;
-const Contents = styled.div`
-  display: flex;
-  background-color: #ffffff;
-  flex-direction: column;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
-`;
 
 function App() {
   return (
     <ToDoListProvider>
       <Container>
-        <Contents>
-          <ToDoList></ToDoList>
-          <InputContainer></InputContainer>
-        </Contents>
+        <PageHeader></PageHeader>
+        <Switch>
+          <Route exact path="/">
+            <List></List>
+          </Route>
+          <Route path="/add">
+            <Add></Add>
+          </Route>
+          <Route path="/detail/:id">
+            <Detail></Detail>
+          </Route>
+          <Route>
+            <NotFound></NotFound>
+          </Route>
+        </Switch>
       </Container>
     </ToDoListProvider>
   );

@@ -22,6 +22,7 @@ export const ToDoList = () => {
           key={toDo}
           label={toDo}
           onDelete={() => deleteToDo(index)}
+          id={index}
         ></ToDoItem>
       ))}
     </Container>
